@@ -2,7 +2,6 @@
   "author": "",
   "email": "",
   "account": "",
-  "java_version": ["17", "11", "8"],
   "project_name": "Project Name",
   "project_description": "My Project.",
   "project_slug": "{{ cookiecutter.project_name | slugify }}",
