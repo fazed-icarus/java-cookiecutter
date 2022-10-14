@@ -9,6 +9,7 @@
 plugins {
   // Apply the application plugin to add support for building a CLI application in Java.
   id 'application'
+  id 'jacoco'
 }
 
 repositories {
@@ -26,7 +27,7 @@ dependencies {
 
 application {
   // Define the main class for the application.
-  mainClass = '{{ cookiecutter.project_name }}.App'
+  mainClass = 'sample.App'
 }
 
 tasks.named('test') {
@@ -34,10 +35,17 @@ tasks.named('test') {
   useTestNG()
 }
 
+jacocoTestReport {
+   reports {
+      xml.enabled = true
+      html.enabled = true
+   }
+}
+
 jar {
   duplicatesStrategy = DuplicatesStrategy.EXCLUDE
   manifest {
-    attributes "Main-Class": '{{ cookiecutter.project_name }}.App'
+    attributes "Main-Class": 'sample.App'
   }
   from {
     configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
