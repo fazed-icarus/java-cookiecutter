@@ -1,4 +1,4 @@
-# {{ cookiecutter.project_name }}
+# {{ cookiecutter.module_name }}
 ============================================
 {%- if cookiecutter.license != 'unlicensed' %}
 [![License](https://img.shields.io/badge/License-{{ cookiecutter.license | replace('-', '%20') }}-blue.svg)](https://spdx.org/licenses/{{ cookiecutter.license }})

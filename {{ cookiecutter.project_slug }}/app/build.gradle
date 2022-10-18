@@ -27,7 +27,7 @@ dependencies {
 
 application {
   // Define the main class for the application.
-  mainClass = 'sample.App'
+  mainClass = '{{ cookiecutter.module_name }}.App'
 }
 
 tasks.named('test') {
@@ -45,7 +45,7 @@ jacocoTestReport {
 jar {
   duplicatesStrategy = DuplicatesStrategy.EXCLUDE
   manifest {
-    attributes "Main-Class": 'sample.App'
+    attributes "Main-Class": '{{ cookiecutter.module_name }}.App'
   }
   from {
     configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }

@@ -6,7 +6,7 @@
  *
 */
 
-package {{ cookiecutter.project_name }};
+package {{ cookiecutter.module_name }};
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
