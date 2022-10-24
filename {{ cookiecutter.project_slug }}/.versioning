@@ -1,0 +1,13 @@
+[tool.proman]
+version = "0.1.0a0"
+
+[[tool.proman.versioning.files]]
+compat = "semver"
+filepath = ".versioning"
+pattern = "version = \"${version}\""
+
+[[tool.proman.versioning.files]]
+compat = "semver"
+filepath = "gradle.properties"
+pattern = "version=${version}"
+
