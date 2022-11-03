@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-  // Use TestNG framework, also requires calling test.useTestNG() below
-  testImplementation 'org.testng:testng:7.4.0'
+  testCompileOnly 'junit:junit:4.11'
+  testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.8.1'
   // These dependencies are used for log4j
   implementation "org.apache.logging.log4j:log4j-api:2.5"
   implementation "org.apache.logging.log4j:log4j-core:2.5"

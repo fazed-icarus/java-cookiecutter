@@ -8,11 +8,12 @@
 
 package {{ cookiecutter.module_name }};
 
-import org.testng.annotations.*;
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class AppTest {
-    @Test public void appHasAGreeting() {
+    @Test
+    public void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
