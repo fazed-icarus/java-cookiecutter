@@ -7,5 +7,5 @@ Java project template.
 
 ## Package Managers
 
-Gradle
-Maven
+- Gradle
+- Maven
