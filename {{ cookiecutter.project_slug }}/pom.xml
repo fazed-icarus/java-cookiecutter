@@ -6,7 +6,7 @@
 
   <groupId>{{ cookiecutter.module_name }}</groupId>
   <artifactId>{{ cookiecutter.module_name }}</artifactId>
-  <version>0.1.0</version>
+  <version>{{ cookiecutter.version }}</version>
 
   <name>{{ cookiecutter.module_name }}</name>
   <!-- FIXME change it to the project's website -->

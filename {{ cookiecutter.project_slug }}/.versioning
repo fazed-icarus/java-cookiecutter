@@ -1,5 +1,5 @@
 [tool.proman]
-version = "0.1.0"
+version = "{{ cookiecutter.version }}"
 
 [[tool.proman.versioning.files]]
 compat = "semver"
