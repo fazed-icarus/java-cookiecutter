@@ -6,6 +6,7 @@
   "project_description": "My Project.",
   "project_slug": "{{ cookiecutter.project_name | slugify }}",
   "module_name": "{{ cookiecutter.project_slug | replace('-', '_') }}",
+  "version": "0.1.0",
   "build_system": [
     "Gradle",
     "Maven"
