@@ -8,3 +8,4 @@ Java project template.
 ## Package Managers
 
 Gradle
+Maven
