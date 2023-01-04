@@ -74,7 +74,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>{{ cookiecutter.module_name }}.App</mainClass>
+              <mainClass>{{ cookiecutter.module_name }}.WebApp</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>

@@ -75,11 +75,10 @@ spotbugs {
 
 pmd {
     consoleOutput = true
-    toolVersion = "6.21.0"
-    rulesMinimumPriority = 5
+    ignoreFailures = false
     ruleSets = [
-      "category/java/bestpractices.xml",
       "category/java/codestyle.xml",
+      "category/java/bestpractices.xml"
     ]
 }
 
