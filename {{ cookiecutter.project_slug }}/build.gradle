@@ -7,14 +7,13 @@
  */
 
 plugins {
-  // Apply the application plugin to add support for building a CLI application in Java.
   id 'application'
   id 'jacoco'
+  id 'pmd'
   id "com.github.spotbugs" version "4.7.3"
 }
 
 repositories {
-  // Use Maven Central for resolving dependencies.
   mavenCentral()
 }
 
@@ -33,20 +32,28 @@ dependencies {
 }
 
 application {
-  // Define the main class for the application.
   mainClass = '{{ cookiecutter.module_name }}.App'
 }
 
-tasks.named('test') {
-  // Use TestNG for unit tests.
-  useTestNG()
+test {
+    jacoco {
+        enabled = true
+        destinationFile = layout.buildDirectory.file("jacoco/${name}.exec").get().asFile
+    }
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
 }
 
 jacocoTestReport {
-   reports {
-      xml.enabled = true
-      html.enabled = true
-   }
+    reports {
+        xml.required = true
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+    dependsOn test
 }
 
 jar {
@@ -64,6 +71,16 @@ spotbugs {
     ignoreFailures = false
     effort = 'max'
     showProgress = true
+}
+
+pmd {
+    consoleOutput = true
+    toolVersion = "6.21.0"
+    rulesMinimumPriority = 5
+    ruleSets = [
+      "category/java/bestpractices.xml",
+      "category/java/codestyle.xml",
+    ]
 }
 
 version = "{{ cookiecutter.version }}"
