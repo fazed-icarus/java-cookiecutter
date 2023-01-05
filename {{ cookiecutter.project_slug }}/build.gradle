@@ -94,6 +94,7 @@ publishing {
     }
     repositories {
         maven {
+            name project.properties['repoId']
             url project.properties['url']
             credentials(HttpHeaderCredentials) {
                 name = project.properties['tokenName']
