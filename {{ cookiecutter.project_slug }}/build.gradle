@@ -10,6 +10,7 @@ plugins {
   id 'application'
   id 'jacoco'
   id 'pmd'
+  id 'maven-publish'
   id "com.github.spotbugs" version "4.7.3"
 }
 
@@ -80,6 +81,29 @@ pmd {
       "category/java/codestyle.xml",
       "category/java/bestpractices.xml"
     ]
+}
+
+publishing {
+    publications {
+        library(MavenPublication) {
+            groupId = "gradle-mock"
+            artifactId = "{{ cookiecutter.module_name }}"
+            version = "{{ cookiecutter.version }}"
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url project.properties['url']
+            credentials(HttpHeaderCredentials) {
+                name = project.properties['tokenName']
+                value = project.properties['token']
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
 }
 
 version = "{{ cookiecutter.version }}"
