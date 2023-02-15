@@ -9,7 +9,9 @@
   "version": "0.1.0",
   "build_system": [
     "gradle",
-    "maven"
+    "maven",
+    "Gradle",
+    "Maven"
   ],
   "license": [
     "Unlicensed",
