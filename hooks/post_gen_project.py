@@ -8,7 +8,8 @@ shutil.rmtree('licenses')
 
 ver_syntax = '\n[[tool.proman.versioning.files]]\ncompat = "semver"'
 
-if '{{ cookiecutter.build_system }}' == 'maven':
+if '{{ cookiecutter.build_system }}' == 'maven' or \
+  '{{cookiecutter.build_system }}' == 'Maven':
     all_delete_files = glob.glob(os.path.join('.', '*gradle*'), recursive=True)
     for f in all_delete_files:
         shutil.rmtree(f) if os.path.isdir(f) else os.remove(f)
